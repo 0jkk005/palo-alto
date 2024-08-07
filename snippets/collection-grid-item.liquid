@@ -1,0 +1,57 @@
+{%- liquid
+	assign text_color = section.settings.text_color
+	assign button_text = section.settings.button_text
+
+	if custom_collection_image
+		assign collection_image = custom_collection_image
+	elsif collection.image
+		assign collection_image = collection.image
+	elsif collection.products.first and collection.products.first.featured_media.preview_image
+		assign collection_image = collection.products.first.featured_media.preview_image
+	else
+		assign collection_image = blank
+	endif
+
+	if collection.title == blank
+		assign collection_title = 'homepage.onboarding.collection_title' | t
+		assign collection_url = '#!'
+	else
+		assign collection_title = collection.title | strip_html | escape | truncatewords: 10
+		assign collection_url = collection.url
+	endif
+-%}
+
+<div class="list-collections__item{% if collection == empty %} list-collections__item--onboarding{% endif %}{% if carousel %} carousel__item{% endif %} {{ item_width }} mobile--one-whole"{% if carousel %} data-slider-item{% endif %}{% if block_shopify_attributes %} {{ block_shopify_attributes }}{% endif %}>
+	<a href="{{ collection_url }}" class="list-collections__item__image text-{{ text_color }}">
+		{%- unless collection_image == blank -%}
+			<div
+				class="list-collections__item__image-bg lazyload"
+				role="img"
+                aria-label="collection image"
+                data-bgset="{% render 'bgset', image: collection_image %}"
+				data-aspectratio="{{ collection_image.aspect_ratio }}"
+				data-sizes="auto"
+			></div>
+			<noscript>
+				<div class="list-collections__item__image-bg" style="background-image: url( {{ collection_image | img_url: '2048x' }} );"></div>
+			</noscript>
+		{%- else -%}
+			<div class="list-collections__item__image-bg">
+				{%- capture current -%}{% cycle 1, 2, 3 %}{%- endcapture -%}
+				{{- 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg-filled' -}}
+			</div>
+		{%- endunless -%}
+
+		<div class="list-collections__item__content">
+			<h3 class="list-collections__item__title">
+				{{- collection_title -}}
+			</h3>
+
+			{%- unless button_text == blank -%}
+				<div class="list-collections__item__btn-wrapper">
+					<span class="btn btn--{{ section.settings.button_style }}">{{- button_text -}}</span>
+				</div>
+			{%- endunless -%}
+		</div>
+	</a>
+</div>

@@ -1,0 +1,26 @@
+{%- if settings.show_review_stars -%}
+  {%- unless product_id == blank -%}
+    {%- if settings.enable_reviews or settings.enable_yotpo and settings.yotpo_ID != '' -%}
+      {%- if settings.enable_yotpo and settings.yotpo_ID != '' -%}
+        <div class="product__badge product__badge--yotpo product__badge--grid">
+          <div class="yotpo bottomLine" data-product-id="{{ product_id }}"></div>
+        </div>
+      {%- elsif settings.enable_reviews -%}
+        <div class="product__badge product__badge--grid">
+          <span class="shopify-product-reviews-badge" data-id="{{ product_id }}"></span>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- comment -%} Onboarding review stars {%- endcomment -%}
+    <div class="product__badge">
+      <span class="spr-badge" data-rating="1">
+        <span class="spr-starrating spr-badge-starrating">
+          {%- for i in (1..5) -%}
+            <i class="spr-icon spr-icon-star"></i>
+          {%- endfor -%}
+        </span>
+      </span>
+    </div>
+  {%- endunless -%}
+{%- endif -%}

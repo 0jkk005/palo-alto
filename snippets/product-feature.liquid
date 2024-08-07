@@ -1,0 +1,77 @@
+{%- unless image_1 == blank and image_2 == blank and heading == blank and description == blank and button_text == blank -%}
+
+{%- unless video_url == blank -%}
+  {%- if video_url.type == 'youtube' -%}
+    {%- assign video_url = 'https://www.youtube.com/watch?v=' | append: video_url.id  -%}
+  {%- elsif video_url.type == 'vimeo' -%}
+    {%- assign video_url = 'https://vimeo.com/' | append: video_url.id  -%}
+  {%- endif -%}
+{%- endunless -%}
+
+<div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
+  <div class="product-feature__images product-feature__images--{{ image_position }}{% if image_2 == blank %} product-feature__images--single{% endif %}{% if hide_image_2 or image_2 == blank %} product-feature__images--single-mobile{% endif %}">
+    {{- video_link -}}
+
+    <div class="product-feature__image product-feature__image--primary">
+      {%- if image_link_1 != blank -%}<a href="{{ image_link_1 }}">{%- endif -%}
+      {%- if image_1 != blank -%}
+        {%- assign image = image_1 -%}
+        <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }} lazyload"
+          data-bgset="{% render 'bgset', image: image %}"
+          data-sizes="auto"
+          data-parent-fit="cover">
+        </div>
+        <noscript>
+          <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }}" style="background-image: url({{ image | img_url: '1024x' }});"></div>
+        </noscript>
+      {%- else -%}
+        <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }} placeholder-svg--overlayed">
+          {{- 'image' | placeholder_svg_tag: 'placeholder-svg-filled' -}}
+        </div>
+      {%- endif -%}
+      {%- if image_link_1 != blank -%}</a>{%- endif -%}
+
+      {%- unless video_url == blank -%}
+        <a class="product-feature__video-link" href="{{ video_url }}" data-play-button>
+          {%- render 'icon-play' -%}
+        </a>
+      {%- endunless -%}
+    </div>
+
+    {%- if image_2 != blank -%}
+      <div class="product-feature__image product-feature__image--secondary">
+        {%- if image_link_2 != blank -%}<a href="{{ image_link_2 }}">{%- endif -%}
+          {%- assign image = image_2 -%}
+          <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }} lazyload"
+            data-bgset="{% render 'bgset', image: image %}"
+            data-sizes="auto"
+            data-parent-fit="cover">
+          </div>
+          <noscript>
+            <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }}" style="background-image: url({{ image | img_url: '1024x' }});"></div>
+          </noscript>
+        {%- if image_link_2 != blank -%}</a>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+
+  <div class="product-feature__text product-feature__text--{{ text_alignment }} rte">
+    {%- if heading != blank -%}
+      <h2>{{ heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if settings.show_spacer_lines -%}
+      <hr>
+    {%- endif -%}
+
+    {%- if description != blank -%}
+      {{- description -}}
+    {%- endif -%}
+
+    {%- if button_text != blank -%}
+      <a href="{{ button_link }}" class="btn btn--{{ button_style }}">{{ button_text }}</a>
+    {%- endif -%}
+  </div>
+</div>
+{%- endunless -%}

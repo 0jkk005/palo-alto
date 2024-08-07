@@ -1,0 +1,160 @@
+{% comment %}
+Source: https://gist.github.com/carolineschnapp/9122054
+If you are not on a collection page, do define which collection to use in the order form.
+Use the following assign statement, replace 'your-collection-handle-here' with your collection handle.
+{% assign collection = collections.your-collection-handle-here %}
+Use the assign statement outside of this comment block at the top of your template.
+{% endcomment %}
+
+
+<section class="section">
+	<div class="wrapper">
+		<h1 class="page-title text-center">
+			{{- page.title -}}
+		</h1>
+		<div class="rte">
+			{{- page.content -}}
+		</div>
+      
+      
+		<div id="wholesale">
+      
+          <style type="text/css">
+            #wholesale .wholesale-group:nth-child(n+1)	{margin-top:40px;}
+            #wholesale table							{border-collapse:separate;}
+            #wholesale tr:nth-child(2n+2)				{background:#EEE;}
+            #wholesale td								{padding:10px;}
+            #wholesale td.image							{text-align:center; width:75px;}
+            #wholesale td.sku							{width:75px; white-space:nowrap;}
+            #wholesale td.price							{width:75px; white-space:nowrap;}
+            #wholesale td.qty							{width:50px;}
+            #wholesale td.qty input						{padding:5px 8px; text-align:right;}
+            #wholesale .button-bar						{margin-top:20px; text-align:center;}
+          </style>
+          
+{% assign collection = collections.wholesale %}
+ 
+{% paginate collection.products by 100 %}
+ 
+{% if collection.products_count > 0 %} 
+
+  {% for product in collection.products %}
+    {% if product.available %}
+    
+      <div class="wholesale-group">
+          
+        <h3>{{product.title}}</h3>
+        <table cellspacing="0">
+        <tbody>
+            {% for variant in product.variants %}
+              {% if variant.available %}
+              <tr>
+                <td class="image">
+                  <a href="{{ product.url | collection }}">
+                    <img src="{{ variant.image.src | product_img_url: 'thumb' }}" alt="{{ product.featured_image.alt | escape }}" />
+                  </a>
+                </td>                                
+                <td>
+                  <a href="{{ product.url | collection }}">
+                   <div class="product-name">{{ product.title }}</div>
+                   {% unless variant.title contains 'Default' %}{{ variant.title }}{% endunless %}
+                  </a>
+                </td>
+                <td class="sku">
+                  <a href="{{ product.url | collection }}">
+                   {% unless variant.sku == '' %}{{ variant.sku }}{% endunless %}
+                  </a>
+                </td>
+                <td class="price">
+                   {{ variant.price | money | replace: " ", "" }}
+                </td>
+                <td class="qty">
+                  <input onfocus="this.select()" size="4" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="0" tabindex="1" />
+                </td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+
+          </tbody>
+        </table>
+      
+      </div>	
+        
+    {% endif %}
+  {% endfor %}
+          
+  <div class="button-bar">
+    <input class="button btn right add-to-cart-order-form" type="submit" value="Add Items to Cart" />
+  </div> 
+
+
+{% else %}
+<p>There are no products in this view.</p>
+{% endif %}
+ 
+{% endpaginate %}
+          
+          
+          
+          
+          
+      </div>	
+      
+	</div>
+</section>
+
+
+
+
+
+{% if collection.products_count > 0 %}
+<script>
+Shopify.itemsToAdd = [];
+Shopify.addItemstoTheCart = function() {
+  if (Shopify.itemsToAdd.length) {
+    var item = Shopify.itemsToAdd.pop();
+    $.ajax({
+      url: '/cart/add',
+      dataType: 'json',
+      type: 'post',
+      data: item,
+      success: Shopify.addItemstoTheCart,
+      error: Shopify.addItemstoTheCart
+    });
+  }
+  else {
+    window.location.href = '/cart';
+  }
+};
+jQuery(function($) {
+  console.log("test");
+  $('table .quantity:first').focus();
+  $('[max]').change(function() {
+    var max = parseInt($(this).attr('max'), 10);
+    var value = parseInt($(this).val(), 10) || 0;
+    if (value > max) { 
+      alert('We only have ' + max + ' of this item in stock');
+      $(this).val(max); 
+    }    
+  });
+  $('.add-to-cart-order-form').click(function() {
+    $('.add-to-cart-order-form').addClass('disabled').attr('disabled','disabled');
+    // Resetting.
+    Shopify.itemsToAdd = [];
+    $('.quantity').each(function() {
+      var quantity = parseInt($(this).val(), 10);
+      if (quantity) {
+        Shopify.itemsToAdd.push( { id: $(this).attr('data-id'), quantity: quantity } );
+      }
+    });     
+    if (Shopify.itemsToAdd.length) {
+      Shopify.addItemstoTheCart();
+    }
+    else {
+      alert('All quantities are set to zero.');
+      $('.add-to-cart-order-form').removeAttr('disabled').removeClass('disabled');
+    }
+  });
+});
+</script>
+{% endif %}

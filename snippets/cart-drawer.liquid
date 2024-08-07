@@ -1,0 +1,22 @@
+<!-- /snippets/cart-drawer.liquid -->
+
+<div id="CartDrawer" class="drawer drawer--right">
+  <div class="drawer__header">
+    <div class="drawer__title h3">{{ 'cart.general.title' | t }}</div>
+    <button type="button" class="drawer__close-button icon-fallback-text js-drawer-close">
+      <span class="visually-hidden">{{ 'general.accessibility.close_drawer' | t }}</span>
+      {%- render 'icon-close' -%}
+    </button>
+  </div>
+  <div class="cart-drawer__spacer-line"></div>
+
+  <div class="cart__errors errors" data-cart-errors>
+		<p data-cart-errors-message></p>
+
+		<button class="cart__errors__close" type="button" aria-label="{{ 'general.accessibility.dismiss' | t }}" data-cart-errors-close>
+			{%- render 'icon-close' -%}
+		</button>
+	</div>
+
+  <div id="CartContainer"></div>
+</div>
