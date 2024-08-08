@@ -961,6 +961,7 @@
           "image_height": "four-fifty-height-hero",
           "text_position": "center-center",
           "enable_parallax": false,
+          "image": "shopify:\/\/shop_images\/173896021_790135391880408_8246423382718332996_n.jpg",
           "image_position": "center-center",
           "overlay_opacity": 40,
           "text_color": "text-light",
