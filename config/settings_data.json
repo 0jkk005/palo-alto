@@ -327,31 +327,36 @@
           "featured_collection_exkniR": {
             "type": "featured_collection",
             "settings": {
-              "collection": "gift-packages"
+              "collection": "gift-packages",
+              "custom_collection_image": "shopify:\/\/shop_images\/Jade_Yoga_Kits-min.jpg"
             }
           },
           "collection-list-0": {
             "type": "featured_collection",
             "settings": {
-              "collection": "yoga-mats"
+              "collection": "yoga-mats",
+              "custom_collection_image": "shopify:\/\/shop_images\/Best-Selling_Yoga_Mats_of_2024-min.jpg"
             }
           },
           "267c2104-5607-41f4-8756-bc7b3b782c7b": {
             "type": "featured_collection",
             "settings": {
-              "collection": "yoga-props"
+              "collection": "yoga-props",
+              "custom_collection_image": "shopify:\/\/shop_images\/Best-Selling_Yoga_Props-min.jpg"
             }
           },
           "72c5a86a-cb87-4071-9f69-fbe00fd7cc9c": {
             "type": "featured_collection",
             "settings": {
-              "collection": "yoga-accessories"
+              "collection": "yoga-accessories",
+              "custom_collection_image": "shopify:\/\/shop_images\/Buy_Essential_Yoga_Accessories-min.jpg"
             }
           },
           "c578ce26-bc26-4aa6-8928-3c5a8680407f": {
             "type": "featured_collection",
             "settings": {
-              "collection": "jade-gear"
+              "collection": "jade-gear",
+              "custom_collection_image": "shopify:\/\/shop_images\/Jade_Gear-min.jpg"
             }
           },
           "02ace2cf-90c6-48f7-a36e-8cdf8b580523": {
