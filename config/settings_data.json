@@ -101,6 +101,8 @@
           "header_position": "fixed",
           "header_transparent": true,
           "header_text_color": "white",
+          "logo": "shopify:\/\/shop_images\/Jade_Yoga_Logo_White.png",
+          "logo_not_home": "shopify:\/\/shop_images\/Jade_Yoga_Logo.png",
           "logo_max_width": 250,
           "show_shop_name": false,
           "main-menu": "",
