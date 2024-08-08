@@ -854,6 +854,7 @@
           "16221658116bc6b5de-1": {
             "type": "item_logo",
             "settings": {
+              "image": "shopify:\/\/shop_images\/Sports.jpg",
               "logos_width": 120,
               "url": "https:\/\/www.si.com\/edge\/2017\/06\/29\/best-yoga-mats-2017"
             }
@@ -861,6 +862,7 @@
           "16221658116bc6b5de-0": {
             "type": "item_logo",
             "settings": {
+              "image": "shopify:\/\/shop_images\/nbc-news-logo.jpg",
               "logos_width": 120,
               "url": "https:\/\/www.nytimes.com\/wirecutter\/reviews\/best-yoga-mat"
             }
@@ -868,6 +870,7 @@
           "16221658116bc6b5de-3": {
             "type": "item_logo",
             "settings": {
+              "image": "shopify:\/\/shop_images\/977a31b32c998dda750cea2db6a7ebf7.jpg",
               "logos_width": 120,
               "url": "https:\/\/www.shape.com\/fitness\/gear\/jade-harmony-eco-friendly-yoga-mat?fbclid=IwAR1A7VHRtnQj2HMiDGmovliBMNM6FtcrI8liw1GLdrRYlkSoTp_LrkI7uYo"
             }
@@ -875,6 +878,7 @@
           "16221658116bc6b5de-2": {
             "type": "item_logo",
             "settings": {
+              "image": "shopify:\/\/shop_images\/self.jpg",
               "logos_width": 120,
               "url": "https:\/\/www.nbcnews.com\/shopping\/wellness\/jade-yoga-harmony-mat-n1258806"
             }
@@ -882,6 +886,7 @@
           "16221658116bc6b5de-4": {
             "type": "item_logo",
             "settings": {
+              "image": "shopify:\/\/shop_images\/SHAPE-Logo-1.jpg",
               "logos_width": 120,
               "url": "https:\/\/www.self.com\/gallery\/best-of-wellness-march-2020"
             }
@@ -889,6 +894,7 @@
           "958a84cc-d267-46c2-a3ad-69d9c60be3dd": {
             "type": "item_logo",
             "settings": {
+              "image": "shopify:\/\/shop_images\/HGTV.jpg",
               "logos_width": 130,
               "url": "https:\/\/www.hgtv.com\/lifestyle\/health-and-wellness\/jade-harmony-yoga-mat-review"
             }
