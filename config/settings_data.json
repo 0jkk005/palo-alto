@@ -968,7 +968,15 @@
       "1622152361c924b662",
       "16221658116bc6b5de",
       "16280254022ec4053f"
-    ]
+    ],
+    "blocks": {
+      "7850045469924030579": {
+        "type": "shopify:\/\/apps\/avada-seo-suite\/blocks\/avada-seo\/15507c6e-1aa3-45d3-b698-7e175e033440",
+        "disabled": true,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Palo Alto": {
