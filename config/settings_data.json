@@ -319,66 +319,36 @@
           "featured_collection_exkniR": {
             "type": "featured_collection",
             "settings": {
-              "collection": "gift-packages"
+              "collection": "gift-packages",
+              "custom_collection_image": "shopify:\/\/shop_images\/Jade_Yoga_Kits-min.jpg"
             }
           },
           "collection-list-0": {
             "type": "featured_collection",
             "settings": {
-              "collection": "yoga-mats"
+              "collection": "yoga-mats",
+              "custom_collection_image": "shopify:\/\/shop_images\/Best-Selling_Yoga_Mats_of_2024-min.jpg"
             }
           },
           "267c2104-5607-41f4-8756-bc7b3b782c7b": {
             "type": "featured_collection",
             "settings": {
-              "collection": "yoga-props"
+              "collection": "yoga-props",
+              "custom_collection_image": "shopify:\/\/shop_images\/Best-Selling_Yoga_Props-min.jpg"
             }
           },
           "72c5a86a-cb87-4071-9f69-fbe00fd7cc9c": {
             "type": "featured_collection",
             "settings": {
-              "collection": "yoga-accessories"
+              "collection": "yoga-accessories",
+              "custom_collection_image": "shopify:\/\/shop_images\/Buy_Essential_Yoga_Accessories-min.jpg"
             }
           },
           "c578ce26-bc26-4aa6-8928-3c5a8680407f": {
             "type": "featured_collection",
             "settings": {
-              "collection": "jade-gear"
-            }
-          },
-          "02ace2cf-90c6-48f7-a36e-8cdf8b580523": {
-            "type": "featured_collection",
-            "disabled": true,
-            "settings": {
-              "collection": "cotton-grass-yoga-rugs"
-            }
-          },
-          "collection-list-1": {
-            "type": "featured_collection",
-            "disabled": true,
-            "settings": {
-              "collection": "yoga-blocks"
-            }
-          },
-          "collection-list-3": {
-            "type": "featured_collection",
-            "disabled": true,
-            "settings": {
-              "collection": "yoga-towels"
-            }
-          },
-          "84ba7e8e-d189-45e1-a0d3-548ed787a6e7": {
-            "type": "featured_collection",
-            "disabled": true,
-            "settings": {
-              "collection": "mat-wash"
-            }
-          },
-          "a78d9149-06ef-4f89-8ed3-d2ecddad2683": {
-            "type": "featured_collection",
-            "disabled": true,
-            "settings": {
-              "collection": "mat-carriers-and-bags"
+              "collection": "jade-gear",
+              "custom_collection_image": "shopify:\/\/shop_images\/Jade_Gear-min.jpg"
             }
           }
         },
@@ -387,12 +357,7 @@
           "collection-list-0",
           "267c2104-5607-41f4-8756-bc7b3b782c7b",
           "72c5a86a-cb87-4071-9f69-fbe00fd7cc9c",
-          "c578ce26-bc26-4aa6-8928-3c5a8680407f",
-          "02ace2cf-90c6-48f7-a36e-8cdf8b580523",
-          "collection-list-1",
-          "collection-list-3",
-          "84ba7e8e-d189-45e1-a0d3-548ed787a6e7",
-          "a78d9149-06ef-4f89-8ed3-d2ecddad2683"
+          "c578ce26-bc26-4aa6-8928-3c5a8680407f"
         ],
         "settings": {
           "layout": "carousel",
@@ -839,42 +804,48 @@
           "16221658116bc6b5de-1": {
             "type": "item_logo",
             "settings": {
-              "logos_width": 120,
+              "image": "shopify:\/\/shop_images\/Sports_Illustrated.jpg",
+              "logos_width": 180,
               "url": "https:\/\/www.si.com\/edge\/2017\/06\/29\/best-yoga-mats-2017"
             }
           },
           "16221658116bc6b5de-0": {
             "type": "item_logo",
             "settings": {
-              "logos_width": 120,
+              "image": "shopify:\/\/shop_images\/New_York_Times.jpg",
+              "logos_width": 180,
               "url": "https:\/\/www.nytimes.com\/wirecutter\/reviews\/best-yoga-mat"
             }
           },
           "16221658116bc6b5de-3": {
             "type": "item_logo",
             "settings": {
-              "logos_width": 120,
+              "image": "shopify:\/\/shop_images\/SHAPE.jpg",
+              "logos_width": 180,
               "url": "https:\/\/www.shape.com\/fitness\/gear\/jade-harmony-eco-friendly-yoga-mat?fbclid=IwAR1A7VHRtnQj2HMiDGmovliBMNM6FtcrI8liw1GLdrRYlkSoTp_LrkI7uYo"
             }
           },
           "16221658116bc6b5de-2": {
             "type": "item_logo",
             "settings": {
-              "logos_width": 120,
+              "image": "shopify:\/\/shop_images\/NBC_News.jpg",
+              "logos_width": 180,
               "url": "https:\/\/www.nbcnews.com\/shopping\/wellness\/jade-yoga-harmony-mat-n1258806"
             }
           },
           "16221658116bc6b5de-4": {
             "type": "item_logo",
             "settings": {
-              "logos_width": 120,
+              "image": "shopify:\/\/shop_images\/SELF_8c672b45-2e8f-4d64-9bba-2111693331ff.jpg",
+              "logos_width": 180,
               "url": "https:\/\/www.self.com\/gallery\/best-of-wellness-march-2020"
             }
           },
           "958a84cc-d267-46c2-a3ad-69d9c60be3dd": {
             "type": "item_logo",
             "settings": {
-              "logos_width": 130,
+              "image": "shopify:\/\/shop_images\/HGTV_1fba73eb-525d-4bd0-8e0b-ae97bc6deb04.jpg",
+              "logos_width": 180,
               "url": "https:\/\/www.hgtv.com\/lifestyle\/health-and-wellness\/jade-harmony-yoga-mat-review"
             }
           }
