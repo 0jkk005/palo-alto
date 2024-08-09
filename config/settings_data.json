@@ -258,6 +258,7 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/slide_8.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/mobile_slide_8-min.webp",
               "bg_position": "center-bottom",
               "overlay_opacity": 20,
               "text_color": "text-light",
